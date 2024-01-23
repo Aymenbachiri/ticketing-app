@@ -5,13 +5,11 @@ import { useRouter } from "next/navigation";
 
 export default function DeleteBlock({ id }) {
   const router = useRouter();
+  const apiUrl = process.env.API_URL;
   const deleteTicket = async () => {
-    const res = await fetch(
-      `https://ticketing-app-lac.vercel.app/api/Tickets/${id}`,
-      {
-        method: "DELETE",
-      }
-    );
+    const res = await fetch(`${apiUrl}/api/Tickets/${id}`, {
+      method: "DELETE",
+    });
     if (res.ok) {
       router.refresh();
     }

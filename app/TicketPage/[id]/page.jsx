@@ -1,12 +1,10 @@
 import TicketForm from "@/app/(components)/TicketForm";
 
 const getTicketById = async (id) => {
-  const res = await fetch(
-    `https://ticketing-app-lac.vercel.app/api/Tickets/${id}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const apiUrl = process.env.API_URL;
+  const res = await fetch(`${apiUrl}/api/Tickets/${id}`, {
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error("Failed to get ticket");
   }
