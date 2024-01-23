@@ -14,7 +14,7 @@ export default function Nav() {
         </Link>
       </div>
       <div>
-        <p className="text-default-text">jake@gmail.com</p>
+        <p className="text-default-text">aymen.bachiri99@gmail.com</p>
       </div>
     </nav>
   );
